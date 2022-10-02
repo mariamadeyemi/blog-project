@@ -1,0 +1,22 @@
+<%- include('partials/header'); -%>
+
+<h1>Home</h1>
+<p> <%= startingContent %> </p>
+
+
+
+<% posts.forEach((post)=>{ %>
+
+    <% const length = 100; %>
+    <% let myString = post.body; %>
+    <% const shortBody = myString.substring(0, length); %>
+    
+    <h1><%= post.title %></h1>
+    <p> <%= shortBody + " ..." %> <a href="/post/<%=post.title%>">Read More</a> </p>
+
+    <% }); %>
+
+
+
+<%- include('partials/footer'); -%>
+
